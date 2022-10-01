@@ -4,6 +4,7 @@ import com.sda.georgepop.petclinic.model.Vet;
 import com.sda.georgepop.petclinic.repository.VetRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 public class VetServiceImpl implements VetService {
 
@@ -32,7 +33,11 @@ public class VetServiceImpl implements VetService {
 
     @Override
     public List<Vet> getAllVets() {
-        List<Vet> allVets = vetRepository.getAllVets();
-        return allVets;
+        return vetRepository.getAllVets();
+    }
+
+    @Override
+    public Optional<Vet> findById(int id) {
+        return vetRepository.findById(id);
     }
 }

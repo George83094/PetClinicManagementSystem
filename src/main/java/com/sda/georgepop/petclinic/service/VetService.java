@@ -3,6 +3,7 @@ package com.sda.georgepop.petclinic.service;
 import com.sda.georgepop.petclinic.model.Vet;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface VetService {
     void createVet(
@@ -12,4 +13,6 @@ public interface VetService {
             String speciality
     );
     List<Vet> getAllVets();
+
+    Optional<Vet> findById(int id);
 }
