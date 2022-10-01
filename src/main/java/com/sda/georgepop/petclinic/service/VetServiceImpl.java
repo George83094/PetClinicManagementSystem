@@ -1,6 +1,9 @@
 package com.sda.georgepop.petclinic.service;
 
+import com.sda.georgepop.petclinic.model.Vet;
 import com.sda.georgepop.petclinic.repository.VetRepository;
+
+import java.util.List;
 
 public class VetServiceImpl implements VetService {
 
@@ -25,5 +28,11 @@ public class VetServiceImpl implements VetService {
             throw new IllegalArgumentException("Speciality is INVALID");
         }
         vetRepository.createVet(firstname, lastname, address, speciality);
+    }
+
+    @Override
+    public List<Vet> getAllVets() {
+        List<Vet> allVets = vetRepository.getAllVets();
+        return allVets;
     }
 }

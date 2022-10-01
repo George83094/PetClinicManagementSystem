@@ -5,6 +5,8 @@ import com.sda.georgepop.petclinic.utils.SessionManager;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.util.List;
+
 public class VetRepositoryImpl implements VetRepository {
 
 
@@ -25,6 +27,14 @@ public class VetRepositoryImpl implements VetRepository {
             if(transaction != null) {
                 transaction.rollback();
             }
+        }
+    }
+
+    @Override
+    public List<Vet> getAllVets() {
+        try(Session session = SessionManager.getSessionFactory().openSession()){
+            List<Vet> allVets = session.createQuery("FROM Vet", Vet.class).getResultList();
+            return  allVets;
         }
     }
 }

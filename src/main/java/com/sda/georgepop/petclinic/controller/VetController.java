@@ -1,5 +1,6 @@
 package com.sda.georgepop.petclinic.controller;
 
+import com.sda.georgepop.petclinic.model.Vet;
 import com.sda.georgepop.petclinic.service.VetService;
 
 import java.util.Scanner;
@@ -29,6 +30,13 @@ public class VetController {
             System.out.println("Invalid data:" + e.getMessage());
         } catch (Exception e) {
             System.out.println("Internal server error." + e.getMessage());
+        }
+    }
+
+    public void showAllVets(){
+        System.out.println("Vet list:");
+        for(Vet vet : vetService.getAllVets()){
+            System.out.println(vet.getId() + " " + vet.getFirstName() + " " + vet.getLastName() + " " + vet.getAddress() + " " + vet.getSpeciality());
         }
     }
 }

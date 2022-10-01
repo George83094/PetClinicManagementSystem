@@ -1,7 +1,7 @@
 Done PCMS_1: Setup hibernate infrastructure.
 Done PCMS_2: Setup hibernate model.
 Done PCMS_3: Setup application architecture.
-PCMS_4: Implement a way for the user to interact with the system.
+Done PCMS_4: Implement a way for the user to interact with the system.
 
 Done PCMS_5: As a user I should be able to add a new veterinarian. I should be able to specify firstname, lastname, address, speciality.
 PCMS_6: As a user I should be able to view the details of an existing veterinarian. I should be able to view the following data:

@@ -1,5 +1,9 @@
 package com.sda.georgepop.petclinic.repository;
 
+import com.sda.georgepop.petclinic.model.Vet;
+
+import java.util.List;
+
 public interface VetRepository {
     void createVet (
             String firstname,
@@ -7,4 +11,6 @@ public interface VetRepository {
             String address,
             String speciality
     );
+
+    List<Vet> getAllVets();
 }
