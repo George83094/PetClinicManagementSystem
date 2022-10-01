@@ -17,7 +17,7 @@ public class SessionManager extends AbstractSessionManager{
     }
 
     public static SessionFactory getSessionFactory(){
-        return INSTANCE.getSessionFactory("pet_clinic");
+        return INSTANCE.getSessionFactory("pet_clinic?serverTimezone=UTC");
     }
 
     public static void shutDown(){

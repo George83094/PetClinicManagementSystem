@@ -7,8 +7,9 @@ import java.sql.Date;
 @Table(name = "consult")
 public class Consult {
     @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int id;
+    private Integer id;
     @Column(name = "date")
     private Date date;
     @Column(name = "description")
@@ -35,7 +36,15 @@ public class Consult {
         return id;
     }
 
-    public void setId(int id) {
+    public Consult(Integer id, Date date, String description, Vet vet, Pet pet) {
+        this.id = id;
+        this.date = date;
+        this.description = description;
+        this.vet = vet;
+        this.pet = pet;
+    }
+
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -55,15 +64,6 @@ public class Consult {
         this.description = description;
     }
 
-    @Override
-    public String toString() {
-        return "Consult{" +
-                "id=" + id +
-                ", date=" + date +
-                ", description='" + description + '\'' +
-                '}';
-    }
-
     public Vet getVet() {
         return vet;
     }
@@ -79,4 +79,16 @@ public class Consult {
     public void setPet(Pet pet) {
         this.pet = pet;
     }
+
+    @Override
+    public String toString() {
+        return "Consult{" +
+                "id=" + id +
+                ", date=" + date +
+                ", description='" + description + '\'' +
+                '}';
+    }
+
+
+
 }
