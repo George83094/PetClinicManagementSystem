@@ -1,9 +1,12 @@
 package com.sda.georgepop.petclinic.utils;
 
 
-import com.mysql.cj.xdevapi.SessionFactory;
+import com.sda.georgepop.petclinic.model.Consult;
+import com.sda.georgepop.petclinic.model.Pet;
+import com.sda.georgepop.petclinic.model.Vet;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 
-import java.lang.module.Configuration;
 
 public class SessionManager extends AbstractSessionManager{
 
@@ -23,7 +26,9 @@ public class SessionManager extends AbstractSessionManager{
 
     @Override
     protected void setAnnotatedClasses(Configuration configuration){
-        // configuration.addAnotatedClass(Vet.class);
+        configuration.addAnnotatedClass(Vet.class);
+        configuration.addAnnotatedClass(Pet.class);
+        configuration.addAnnotatedClass(Consult.class);
     }
 
 }
