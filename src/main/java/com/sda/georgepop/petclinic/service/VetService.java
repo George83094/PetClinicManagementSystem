@@ -23,4 +23,6 @@ public interface VetService {
             String address,
             String speciality
     );
+
+    void deleteVetById(int id);
 }

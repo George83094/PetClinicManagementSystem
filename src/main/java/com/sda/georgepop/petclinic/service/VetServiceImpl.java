@@ -43,7 +43,7 @@ public class VetServiceImpl implements VetService {
 
     @Override
     public void updateVetById(int id, String firstname, String lastname, String address, String speciality) {
-        if (id <=0) {
+        if (id <= 0) {
             throw new IllegalArgumentException("Id is INVALID");
         }
         if (firstname == null || firstname.isBlank()) {
@@ -59,5 +59,13 @@ public class VetServiceImpl implements VetService {
             throw new IllegalArgumentException("Speciality is INVALID");
         }
         vetRepository.updateVetById(id, firstname, lastname, address, speciality);
+    }
+
+    @Override
+    public void deleteVetById(int id) {
+        if (id <= 0) {
+            throw new IllegalArgumentException("Id is INVALID");
+        }
+        vetRepository.deleteVetById(id);
     }
 }

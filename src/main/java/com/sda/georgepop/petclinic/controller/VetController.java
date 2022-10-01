@@ -73,11 +73,25 @@ public class VetController {
             String speciality = scanner.nextLine();
 
             vetService.updateVetById(id, firstName, lastName, address, speciality);
-        }catch(NumberFormatException e){
+        } catch (NumberFormatException e) {
             System.err.println("Invalid id format");
-        }catch(IllegalArgumentException e){
+        } catch (IllegalArgumentException e) {
             System.err.println(e.getMessage());
-        }catch (Exception e){
+        } catch (Exception e) {
+            System.err.println("Internal server error");
+        }
+    }
+
+    public void deleteVetById() {
+        try {
+            System.out.println("Please insert id: ");
+            int id = Integer.parseInt(scanner.nextLine().trim());
+            vetService.deleteVetById(id);
+        } catch (NumberFormatException e) {
+            System.err.println("Invalid id format");
+        } catch (IllegalArgumentException e) {
+            System.err.println(e.getMessage());
+        } catch (Exception e) {
             System.err.println("Internal server error");
         }
     }
