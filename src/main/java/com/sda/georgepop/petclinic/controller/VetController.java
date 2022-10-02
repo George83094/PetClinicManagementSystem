@@ -3,6 +3,7 @@ package com.sda.georgepop.petclinic.controller;
 import com.sda.georgepop.petclinic.model.Vet;
 import com.sda.georgepop.petclinic.service.VetService;
 
+import java.io.IOException;
 import java.time.format.DateTimeFormatter;
 import java.util.InputMismatchException;
 import java.util.Optional;
@@ -95,6 +96,16 @@ public class VetController {
             System.err.println(e.getMessage());
         } catch (Exception e) {
             System.err.println("Internal server error");
+        }
+    }
+
+    public void importVets() {
+        try {
+            System.out.println("Import vets started");
+            vetService.importVets();
+            System.out.println("Import vets finished");
+        } catch (IOException e) {
+            System.out.println("Import vets failed");
         }
     }
 }
