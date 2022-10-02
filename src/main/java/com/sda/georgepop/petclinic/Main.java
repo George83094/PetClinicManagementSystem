@@ -1,7 +1,10 @@
 package com.sda.georgepop.petclinic;
 
+import com.sda.georgepop.petclinic.controller.PetController;
 import com.sda.georgepop.petclinic.controller.VetController;
+import com.sda.georgepop.petclinic.repository.PetRepositoryImpl;
 import com.sda.georgepop.petclinic.repository.VetRepositoryImpl;
+import com.sda.georgepop.petclinic.service.PetServiceImpl;
 import com.sda.georgepop.petclinic.service.VetServiceImpl;
 import com.sda.georgepop.petclinic.utils.SessionManager;
 import com.sda.georgepop.petclinic.utils.UserOption;
@@ -12,6 +15,7 @@ public class Main {
     public static void main(String[] args) {
         SessionManager.getSessionFactory();
         VetController vetController = new VetController(new VetServiceImpl(new VetRepositoryImpl()));
+        PetController petController = new PetController(new PetServiceImpl(new PetRepositoryImpl()));
         UserOption userOption;
 
         Scanner scanner = new Scanner(System.in);
@@ -40,6 +44,9 @@ public class Main {
                     break;
                 case DELETE_VET_BY_ID:
                     vetController.deleteVetById();
+                    break;
+                case ADD_PET:
+                    petController.createPet();
                     break;
                 case UNKNOWN:
                     System.err.println("Invalid option selected");

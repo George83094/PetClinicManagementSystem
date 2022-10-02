@@ -3,11 +3,13 @@ package com.sda.georgepop.petclinic.controller;
 import com.sda.georgepop.petclinic.model.Vet;
 import com.sda.georgepop.petclinic.service.VetService;
 
+import java.time.format.DateTimeFormatter;
 import java.util.InputMismatchException;
 import java.util.Optional;
 import java.util.Scanner;
 
 public class VetController {
+
     private final VetService vetService;
 
     private final Scanner scanner = new Scanner(System.in);
