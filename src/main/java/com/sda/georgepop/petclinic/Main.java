@@ -1,9 +1,12 @@
 package com.sda.georgepop.petclinic;
 
+import com.sda.georgepop.petclinic.controller.ConsultController;
 import com.sda.georgepop.petclinic.controller.PetController;
 import com.sda.georgepop.petclinic.controller.VetController;
+import com.sda.georgepop.petclinic.repository.ConsultRepositoryImpl;
 import com.sda.georgepop.petclinic.repository.PetRepositoryImpl;
 import com.sda.georgepop.petclinic.repository.VetRepositoryImpl;
+import com.sda.georgepop.petclinic.service.ConsultServiceImpl;
 import com.sda.georgepop.petclinic.service.PetServiceImpl;
 import com.sda.georgepop.petclinic.service.VetServiceImpl;
 import com.sda.georgepop.petclinic.utils.SessionManager;
@@ -16,6 +19,11 @@ public class Main {
         SessionManager.getSessionFactory();
         VetController vetController = new VetController(new VetServiceImpl(new VetRepositoryImpl()));
         PetController petController = new PetController(new PetServiceImpl(new PetRepositoryImpl()));
+        ConsultController consultController = new ConsultController(new ConsultServiceImpl(
+                new VetRepositoryImpl(),
+                new PetRepositoryImpl(),
+                new ConsultRepositoryImpl()
+        ));
         UserOption userOption;
 
         Scanner scanner = new Scanner(System.in);
@@ -53,6 +61,9 @@ public class Main {
                     break;
                 case IMPORT_PETS:
                     petController.importPets();
+                    break;
+                case CREATE_CONSULT:
+                    consultController.createConsult();
                     break;
                 case UNKNOWN:
                     System.err.println("Invalid option selected");

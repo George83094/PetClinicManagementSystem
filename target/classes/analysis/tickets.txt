@@ -28,4 +28,4 @@ Todo PCMS_16: As a user I should be able to view all the consult. I should be ab
 consult id, vet id (of an existing vet), pet id (of an existing pet), date, description.
 Todo PCMS_17: As a user I should be able to update only the description for a specific consult by choosing the id.
 
-PCMS_18: As a user I should be able to import all the data from a CSV file.
+Done PCMS_18: As a user I should be able to import all the data from a CSV file.

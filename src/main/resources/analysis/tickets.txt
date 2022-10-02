@@ -22,7 +22,7 @@ Todo PCMS_13: As a user I should be able to delete an existing pet by choosing t
 Todo PCMS_14: As a user I should be able to view all pets. I should be able to view the following data:
 id, wonerName, race.
 
-PCMS_15: As a user i should be able to add a consult. I should be able to specify:
+Done PCMS_15: As a user i should be able to add a consult. I should be able to specify:
 vet id (of an existing vet), pet id (of an existing pet), date, description.
 Todo PCMS_16: As a user I should be able to view all the consult. I should be able to view the following data:
 consult id, vet id (of an existing vet), pet id (of an existing pet), date, description.
