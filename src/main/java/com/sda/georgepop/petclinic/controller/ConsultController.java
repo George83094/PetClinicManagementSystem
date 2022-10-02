@@ -25,7 +25,7 @@ public class ConsultController {
             int vetId = Integer.parseInt(scanner.nextLine());
             System.out.println("Please insert pet id");
             int petId = Integer.parseInt(scanner.nextLine());
-            System.out.println("Please insert the date of consult");
+            System.out.println("Please insert the date of consult in this format : MM-dd-yyyy:");
             Date date = Date.valueOf(LocalDate.parse(scanner.nextLine(), FORMATTER));
             System.out.println("Please insert the descrition of consult");
             String description = scanner.nextLine();
